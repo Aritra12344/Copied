@@ -67,7 +67,7 @@
       signupbtn.disabled=true;
       signupbtn.textContent="Registering Your Account! Please Wait";
       firebase.auth().createUserWithEmailAndPassword(emailsignup.value,passswordsignup.value).then(function(response){
-        sendingVerifyEmail(signupbtn);
+        alert("successful");
             console.log(response);
       })
       .catch(function(error){
@@ -79,20 +79,7 @@
 
   }
 
-  function sendingVerifyEmail(button){
-     firebase.auth().currentUser.sendEmailVerification().then(function(response){
-                signupbtn.disabled=false;
-        signupbtn.textContent="Sign Up S";
 
-        console.log(response);
-     })
-     .catch(function(error){
-                signupbtn.disabled=false;
-        signupbtn.textContent="Sign Up S";
-
-         console.log(error);
-     })
-  }
   //================End Signup With Email and Password======================
 
 </script>
